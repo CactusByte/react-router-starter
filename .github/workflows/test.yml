@@ -1,0 +1,14 @@
+name: CodeCov workflow
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Test packages installation and app running
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install requirements
+      run: npm install
+    - name: Run tests
+      run: npm test
